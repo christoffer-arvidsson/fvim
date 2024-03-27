@@ -1,3 +1,5 @@
+(import-macros {: g!} :hibiscus.vim)
 
-(set vim.g.mapleader " ")
-(set vim.g.maplocalleader " ")
+(g! mapleader " ")
+(g! maplocalleader " ")
+

@@ -1,4 +1,4 @@
--- Script is just to bootstrap tangerine.nvim
+-- Script is just to bootstrap lazy.nvim
 
 local function bootstrap(url, ref)
   local name = url:gsub(".*/", "")
@@ -19,7 +19,6 @@ local function bootstrap(url, ref)
 end
 
 bootstrap("https://github.com/udayvir-singh/tangerine.nvim")
-bootstrap("https://github.com/udayvir-singh/hibiscus.nvim")
 
 require("tangerine").setup({
   --target = vim.fn.stdpath [[data]] .. "/tangerine",

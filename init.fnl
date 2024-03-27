@@ -11,10 +11,12 @@
   (vim.opt.runtimepath:prepend lazypath))
 
 (require :globals)
+(require :bindings)
 
 (require-and :lazy
              #($.setup :plugins
                        {:checker {:enabled true}
-                       :performance {:rtp {:reset false}}}))
+                       :performance {:rtp {:reset false}}
+                       :change_detection {:enabled true :notify false}}))
 
 (require :options)
