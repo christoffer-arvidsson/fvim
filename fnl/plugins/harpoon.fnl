@@ -12,8 +12,8 @@
 
 (fn M.config []
   (local harpoon (require :harpoon))
-  (map! [n] :<leader>ha (fn [] (: (harpoon:list) :append)))
-  (map! [n] :<leader>hh (fn [] (harpoon.ui:toggle_quick_menu (harpoon:list))))
+  (map! [n] "<leader>'a" (fn [] (: (harpoon:list) :append)))
+  (map! [n] "<leader>''" (fn [] (harpoon.ui:toggle_quick_menu (harpoon:list))))
   (map! [n] :<A-n> (fn [] (: (harpoon:list) :select 1)))
   (map! [n] :<A-e> (fn [] (: (harpoon:list) :select 2)))
   (map! [n] :<A-i> (fn [] (: (harpoon:list) :select 3)))
