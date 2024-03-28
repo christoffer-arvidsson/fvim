@@ -9,3 +9,12 @@
 (map! [n] :<leader>ws :<C-w>s "Split horizontally")
 
 (map! [n] :<leader>wq :<cmd>q<CR> "Quit window")
+
+(map! [n] :<Esc> :<cmd>nohlsearch<CR>)
+
+(map! [n] "[d" vim.diagnostic.goto_prev)
+(map! [n] "]d" vim.diagnostic.goto_next)
+(map! [n] :<leader>e vim.diagnostic.open_float)
+(map! [n] :<leader>lE vim.diagnostic.open_float)
+(map! [n] :<leader>lq vim.diagnostic.setloclist)
+
