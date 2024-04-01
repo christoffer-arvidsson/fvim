@@ -1,4 +1,4 @@
-(local {: require-and : file-exists?} (require :functions))
+(local {: require-and : file-exists-p} (require :functions))
 
 (let [lazypath (.. (vim.fn.stdpath :data) :/lazy/lazy.nvim)]
   (when (not (vim.loop.fs_stat lazypath))
@@ -12,11 +12,13 @@
 
 (require :globals)
 (require :bindings)
+(require :options)
 
 (require-and :lazy
              #($.setup :plugins
                        {:checker {:enabled true}
                        :performance {:rtp {:reset false}}
                        :change_detection {:enabled true :notify false}}))
-
-(require :options)
+(let [user-file (.. (vim.fn.stdpath :config) :/lua/user/init.lua)]
+  (when (file-exists-p user-file)
+    (require :user)))

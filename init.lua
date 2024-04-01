@@ -19,18 +19,14 @@ local function bootstrap(url, ref)
 end
 
 bootstrap("https://github.com/udayvir-singh/tangerine.nvim")
+bootstrap("https://github.com/udayvir-singh/hibiscus.nvim")
 
 require("tangerine").setup({
   --target = vim.fn.stdpath [[data]] .. "/tangerine",
 
-  -- compile files in &rtp
-  rtpdirs = {
-    "ftplugin",
-  },
-
   compiler = {
     -- disable popup showing compiled files
-    verbose = false,
+    verbose = true,
 
     -- compile every time changed are made to fennel files or on entering vim
     hooks = { "onsave", "oninit" },
