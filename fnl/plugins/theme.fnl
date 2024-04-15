@@ -1,8 +1,9 @@
 
-(local M {1 :folke/tokyonight.nvim
+(local M {1 :rose-pine/neovim
+       :as :rose-pine
        :priority 1000
        :init (fn []
-               (vim.cmd.colorscheme :tokyonight-night))
+               (vim.cmd.colorscheme :rose-pine-main))
 })
 
 M
