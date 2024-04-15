@@ -16,7 +16,7 @@
 
 (require-and :lazy
              #($.setup :plugins
-                       {:checker {:enabled true}
+                       {:checker {:enabled true :notify false}
                        :performance {:rtp {:reset false}}
                        :change_detection {:enabled true :notify false}}))
 (let [user-file (.. (vim.fn.stdpath :config) :/lua/user/init.lua)]
