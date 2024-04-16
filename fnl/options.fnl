@@ -21,6 +21,7 @@
 (set! listchars { :tab "» " :trail "·" :nbsp "␣" })
 (set! cursorline true)
 (set! scrolloff 0)
+(set! termguicolors true)
 
 ;; functionality
 (set! clipboard :unnamedplus)
