@@ -1,8 +1,4 @@
-(local {: require-and} (require :functions))
 (import-macros {: map!} :hibiscus.vim)
-
-(lambda builtin [callback]
-  (require-and :telescope.builtin callback))
 
 (local M { 1 :nvim-telescope/telescope.nvim
        :tag "0.1.6"
@@ -10,6 +6,7 @@
        :config true
        :dependencies [:nvim-lua/plenary.nvim] 
        })
+
 
 (fn M.config [] 
 
@@ -30,9 +27,11 @@
                    }})
 
   (local builtin (require :telescope.builtin))
+  (local utils (require :telescope.utils))
   (map! [n] :<leader>ht builtin.help_tags)
   (map! [n] :<leader>hm builtin.keymaps)
-  (map! [n] :<leader>pf (fn [] (builtin.find_files {:hidden true :ignore true})))
+  (map! [n] :<leader>pf (fn [] (builtin.find_files {:hidden true :ignore true })))
+  (map! [n] :<leader>ff (fn [] (builtin.find_files {:cwd (utils.buffer_dir) :hidden true :ignore true })))
   (map! [n] :<leader>hh builtin.builtin)
   (map! [n] :<leader>s/ builtin.grep_string)
   (map! [n] :<leader>/ builtin.live_grep)
