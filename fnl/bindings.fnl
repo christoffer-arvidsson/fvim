@@ -20,3 +20,5 @@
 
 (map! [n] :<leader>ol :<cmd>Lazy<CR>)
 
+(map! [n] :<leader>br :<cmd>edit!<CR>)
+
