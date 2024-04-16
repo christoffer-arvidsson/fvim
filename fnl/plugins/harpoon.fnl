@@ -1,18 +1,18 @@
 (local {: require-and} (require :functions))
 (import-macros {: map!} :hibiscus.vim)
 
-(fn harp [callback]
-  (require-and :harpoon callback))
-
 (local M { 1 :ThePrimeagen/harpoon
            :branch "harpoon2"
            :lazy false
+           :config true
            :dependencies [:nvim-lua/plenary.nvim] })
 
 
 (fn M.config []
   (local harpoon (require :harpoon))
-  (map! [n] "<leader>'a" (fn [] (: (harpoon:list) :append)))
+
+  (harpoon.setup {})
+  (map! [n] "<leader>'a" (fn [] (: (harpoon:list) :add)))
   (map! [n] "<leader>''" (fn [] (harpoon.ui:toggle_quick_menu (harpoon:list))))
   (map! [n] :<A-n> (fn [] (: (harpoon:list) :select 1)))
   (map! [n] :<A-e> (fn [] (: (harpoon:list) :select 2)))
