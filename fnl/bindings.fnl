@@ -18,3 +18,5 @@
 (map! [n] :<leader>lE vim.diagnostic.open_float)
 (map! [n] :<leader>lq vim.diagnostic.setloclist)
 
+(map! [n] :<leader>ol :<cmd>Lazy<CR>)
+
