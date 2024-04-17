@@ -35,8 +35,9 @@
                                :group (vim.api.nvim_create_augroup :fvim-lsp-attach {:clear true})})	
 
 
-  (lspconfig.pyright.setup {})
+  (lspconfig.clangd.setup {})
   (lspconfig.rust_analyzer.setup {})
-  (lspconfig.fennel_ls.setup {}))
+  (lspconfig.fennel_ls.setup {})
+  (lspconfig.pyright.setup {}))
                        
 M
