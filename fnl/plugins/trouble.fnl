@@ -1,9 +1,10 @@
 (import-macros {: map!} :hibiscus.vim)
 
-(local M { 1 :folke/trouble.nvim :lazy false :config true :opts { :icons false } } )
+(local M { 1 :folke/trouble.nvim :lazy false :config true} )
 
 (fn M.config [] 
   (local trouble (require :trouble))
+  (trouble.setup { :icons false })
   (map! [n] :<leader>xx trouble.toggle)
   (map! [n] :<leader>xw (fn [] (trouble.toggle "workspace_diagnostics")))
   (map! [n] :<leader>xd (fn [] (trouble.toggle "document_diagnostics")))
