@@ -31,4 +31,5 @@
 (set! updatetime 250)
 (set! timeoutlen 300)
 (set! splitright true)
+(set! inccommand :nosplit)
 
