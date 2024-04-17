@@ -17,6 +17,11 @@
 (map! [n] :<leader>e vim.diagnostic.open_float)
 (map! [n] :<leader>lE vim.diagnostic.open_float)
 (map! [n] :<leader>lq vim.diagnostic.setloclist)
+(map! [n] :<leader>bf vim.lsp.buf.format)
+
+(map! [v] :<M-down> ":m '>+1<CR>gv=gv")
+(map! [v] :<M-up> ":m '>-2<CR>gv=gv")
+(map! [n] :J "mzJ`z")
 
 (map! [n] :<leader>ol :<cmd>Lazy<CR>)
 
