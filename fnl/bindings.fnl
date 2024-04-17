@@ -17,7 +17,6 @@
 (map! [n] :<leader>e vim.diagnostic.open_float)
 (map! [n] :<leader>lE vim.diagnostic.open_float)
 (map! [n] :<leader>lq vim.diagnostic.setloclist)
-(map! [n] :<leader>bf vim.lsp.buf.format)
 
 (map! [v] :<M-down> ":m '>+1<CR>gv=gv")
 (map! [v] :<M-up> ":m '>-2<CR>gv=gv")
@@ -26,7 +25,11 @@
 (map! [n] :<leader>ol :<cmd>Lazy<CR>)
 
 (map! [n] :<leader>br :<cmd>edit!<CR>)
+(map! [n] :<leader>bf vim.lsp.buf.format)
 
 (map! [n] :<leader>fy "<cmd>call setreg('+', expand('%'))<CR>")
 (map! [n] :<leader>fY "<cmd>let @+=expand('%:p')<CR>")
+
+(map! [n] :<M-g>n :<cmd>cnext<CR>)
+(map! [n] :<M-g>p :<cmd>cprev<CR>)
 
