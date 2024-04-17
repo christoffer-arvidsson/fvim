@@ -4,7 +4,10 @@
        :tag "0.1.6"
        :lazy false
        :config true
-       :dependencies [:nvim-lua/plenary.nvim] 
+       :dependencies [:nvim-lua/plenary.nvim 
+                       {1 :nvim-telescope/telescope-fzf-native.nvim 
+                       :build "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" } 
+                       ] 
        })
 
 
@@ -12,6 +15,14 @@
 
   (local telescope (require :telescope))
   (telescope.setup {
+                   :extensions {
+                     :fzf {
+                       :fuzzy true
+                       :override_generic_sorter true
+                       :override_file_sorter true
+                       :case_mode :smart_case
+                     }
+                   }
                    :pickers { 
                      :find_files { :theme :ivy }
                      :help_tags { :theme :ivy }
@@ -21,6 +32,14 @@
                      :diagnostics { :theme :ivy }
                      :oldfiles { :theme :ivy }
                      :buffers { :theme :ivy }
+                     :lsp_references { :theme :ivy }
+                     :lsp_incoming_calls { :theme :ivy }
+                     :lsp_outgoing_calls { :theme :ivy }
+                     :lsp_document_symbols { :theme :ivy }
+                     :lsp_workspace_symbols { :theme :ivy }
+                     :lsp_diagnostics { :theme :ivy }
+                     :lsp_definitions { :theme :ivy }
+                     :lsp_type_definitions { :theme :ivy }
                    }
                    :defaults {
                    :vimgrep_arguments [
@@ -37,8 +56,11 @@
                    }})
 
 
+  (local telescope (require :telescope))
   (local builtin (require :telescope.builtin))
   (local utils (require :telescope.utils))
+
+  (telescope.load_extension :fzf)
 
   (map! [n] :<leader>ht builtin.help_tags)
   (map! [n] :<leader>hm builtin.keymaps)
