@@ -27,3 +27,6 @@
 
 (map! [n] :<leader>br :<cmd>edit!<CR>)
 
+(map! [n] :<leader>fy "<cmd>call setreg('+', expand('%'))<CR>")
+(map! [n] :<leader>fY "<cmd>let @+=expand('%:p')<CR>")
+
