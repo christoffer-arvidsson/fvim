@@ -6,4 +6,14 @@
 (lambda M.file-exists-p [file]
   (> (vim.fn.filereadable file) 0))
 
+(fn M.project-root []
+  (let [git-cmd "git rev-parse --show-toplevel"
+                handle (io.popen git-cmd)]
+    (var result (handle:read :*a))
+    (handle:close)
+    (set result
+         (result:gsub "^%s*(.-)%s*$" "%1"))
+    result))
+
+
 M
