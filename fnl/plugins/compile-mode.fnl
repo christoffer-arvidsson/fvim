@@ -1,0 +1,15 @@
+(import-macros {: map!} :hibiscus.vim)
+
+(local M {1 :ej-shafran/compile-mode.nvim
+       :dependencies [ { 1 :nvim-lua/plenary.nvim }
+                       { 1 :m00qek/baleia.nvim :tag "v1.3.0" }
+                     ]})
+
+(fn M.config [] 
+  (local compile (require :compile-mode))
+  (compile.setup {})
+
+  (map! [n] :<leader>pc "<cmd>Compile<CR>"))
+
+M
+      
