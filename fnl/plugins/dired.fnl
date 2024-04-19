@@ -8,7 +8,7 @@
 
 (fn M.config []
   (local dired (require :dired))
-  (dired.setup {:keybinds { :dired_up "^" :dired_quit "q" }
+  (dired.setup {:keybinds { :dired_back "^" :dired_quit "q" }
                 :show_icons true 
                 :show_colors true}))
 
