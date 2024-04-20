@@ -19,7 +19,7 @@
                         :verify_commit (= (os.execute "which gpg") 0)}
           :console_timeout 2000
           :disable_context_highlighting false
-          :disable_hint false
+          :disable_hint true
           :disable_insert_on_commit :auto
           :disable_line_numbers true
           :disable_signs false
