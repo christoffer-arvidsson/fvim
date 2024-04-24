@@ -20,6 +20,8 @@
                                             (vim.keymap.set :n :<leader>lw (. (require :telescope.builtin) :lsp_dynamic_workspace_symbols))
                                             (vim.keymap.set :n :<leader>lr vim.lsp.buf.rename)
                                             (vim.keymap.set :n :<leader>la vim.lsp.buf.code_action)
+                                            (vim.keymap.set :n :<leader>bf vim.lsp.buf.format)
+                                            (vim.keymap.set :n :<leader>lf vim.lsp.buf.format)
                                             (vim.keymap.set :n :K vim.lsp.buf.hover)
                                             (vim.keymap.set :n :gD vim.lsp.buf.declaration)
                                             (local client (vim.lsp.get_client_by_id event.data.client_id))
