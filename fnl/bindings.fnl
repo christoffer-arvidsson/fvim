@@ -33,4 +33,4 @@
 (map! [n] :<M-g>n :<cmd>cnext<CR>)
 (map! [n] :<M-g>p :<cmd>cprev<CR>)
 
-(map! [n] :<leader>qr "<cmd>source $MYVIMRC<CR>")
+(map! [n] :<leader>qr "<cmd>luafile ~/.config/nvim/init.lua<CR>")
