@@ -26,6 +26,7 @@
 
 (map! [n] :<leader>br :<cmd>edit!<CR>)
 (map! [n] :<leader>bf vim.lsp.buf.format)
+(map! [n] :<leader>bn :<cmd>enew<CR>)
 
 (map! [n] :<leader>fy "<cmd>call setreg('+', expand('%'))<CR>")
 (map! [n] :<leader>fY "<cmd>let @+=expand('%:p')<CR>")
