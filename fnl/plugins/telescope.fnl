@@ -49,17 +49,18 @@
                      :lsp_type_definitions { :theme :ivy }
                    }
                    :defaults {
-                   :vimgrep_arguments [
-                                       "rg"
-                                       "--color=never"
-                                       "--no-heading"
-                                       "--with-filename"
-                                       "--line-number"
-                                       "--column"
-                                       "--smart-case"
-                                       "--no-ignore"
-                                       "--hidden" ] 
-                   :find_command { :hidden true }
+                     :file_ignore_patterns [ ".git" ]
+                     :vimgrep_arguments [
+                                         "rg"
+                                         "--color=never"
+                                         "--no-heading"
+                                         "--with-filename"
+                                         "--line-number"
+                                         "--column"
+                                         "--smart-case"
+                                         "--no-ignore"
+                                         "--hidden" ] 
+                     :find_command { :hidden true }
                    }})
 
 
