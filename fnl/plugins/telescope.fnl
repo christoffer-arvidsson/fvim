@@ -30,25 +30,18 @@
                        }
                      }
                    }
-                   :pickers { 
-                     :find_files { :theme :ivy }
-                     :help_tags { :theme :ivy }
-                     :keymaps { :theme :ivy }
-                     :grep_string { :theme :ivy }
-                     :live_grep { :theme :ivy }
-                     :diagnostics { :theme :ivy }
-                     :oldfiles { :theme :ivy }
-                     :buffers { :theme :ivy }
-                     :lsp_references { :theme :ivy }
-                     :lsp_incoming_calls { :theme :ivy }
-                     :lsp_outgoing_calls { :theme :ivy }
-                     :lsp_document_symbols { :theme :ivy }
-                     :lsp_workspace_symbols { :theme :ivy }
-                     :lsp_diagnostics { :theme :ivy }
-                     :lsp_definitions { :theme :ivy }
-                     :lsp_type_definitions { :theme :ivy }
-                   }
                    :defaults {
+                     :border true
+                     ; :borderchars ["-" " " "-" " " "-" " " " " "-"]
+                     :borderchars [" " " " "─" " " " " " " " " "─"]
+                     :layout_config {  ;; Layout that resembles emacs's vertico+consult
+                       :anchor :S
+                       :prompt_position :bottom
+                       :width {:padding 0}
+                       :height 0.99
+                       :preview_height 0.5
+                     }
+                     :layout_strategy :vertical
                      :file_ignore_patterns [ ".git" ]
                      :vimgrep_arguments [
                                          "rg"
