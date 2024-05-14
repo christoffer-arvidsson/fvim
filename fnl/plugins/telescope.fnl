@@ -79,6 +79,7 @@
   (map! [n] :<leader>hh builtin.builtin)
   (map! [n] :<leader>s/ (fn [] (builtin.live_grep {:cwd (utils.buffer_dir)})))
   (map! [n] :<leader>/ (fn [] (builtin.live_grep {:cwd (. (vim.fn.systemlist "git rev-parse --show-toplevel") 1) })))
+  (map! [n] :<leader>sb builtin.current_buffer_fuzzy_find)
   (map! [n] :<leader>le builtin.diagnostics)
   (map! [n] :<leader>fr builtin.oldfiles)
   (map! [n] :<leader>bb builtin.buffers))
