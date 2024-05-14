@@ -5,6 +5,8 @@
 
 (fn M.config []
   (local cmp (require :cmp))
+  (cmp.setup.filetype [:sql] {:sources [{:name :vim-dadbod-completion}
+                                        {:name :buffer}] })
   (cmp.setup {
              :completion {:completeopt "menu,menuone,noinsert"}
              :sources [
