@@ -39,7 +39,7 @@
                        :prompt_position :bottom
                        :width {:padding 0}
                        :height 0.99
-                       :preview_height 0.5
+                       ; :preview_height 0.5
                      }
                      :layout_strategy :vertical
                      :file_ignore_patterns [ ".git" ]
