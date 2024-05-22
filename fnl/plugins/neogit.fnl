@@ -80,8 +80,7 @@
                                      :r :Reword
                                      :s :Squash
                                      :x :Execute}
-                     :status {"#" :Console
-                              :$ :CommandHistory
+                     :status {:$ :CommandHistory
                               :1 :Depth1
                               :2 :Depth2
                               :3 :Depth3
