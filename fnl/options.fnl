@@ -24,6 +24,7 @@
 (set! termguicolors true)
 
 ;; functionality
+(set! notimeout)
 (set! clipboard :unnamedplus)
 (set! undofile true)
 (set! ignorecase true)
