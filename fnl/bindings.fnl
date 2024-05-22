@@ -15,7 +15,6 @@
 (map! [n] "[d" vim.diagnostic.goto_prev)
 (map! [n] "]d" vim.diagnostic.goto_next)
 (map! [n] :<leader>e vim.diagnostic.open_float)
-(map! [n] :<leader>lE vim.diagnostic.open_float)
 (map! [n] :<leader>lq vim.diagnostic.setloclist)
 
 (map! [v] :<M-down> ":m '>+1<CR>gv=gv")
