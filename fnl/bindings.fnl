@@ -27,8 +27,15 @@
 (map! [n] :<leader>bf vim.lsp.buf.format)
 (map! [n] :<leader>bn :<cmd>enew<CR>)
 
-(map! [n] :<leader>fy "<cmd>call setreg('+', expand('%'))<CR>")
-(map! [n] :<leader>fY "<cmd>let @+=expand('%:p')<CR>")
+(map! [n] :<leader>fY (fn [] 
+                        (let [path (vim.fn.expand "%:p")]
+                          (vim.fn.setreg "+" path)
+                          (vim.notify (.. "Copied '" path "' to the clipboard!")))))
+
+(map! [n] :<leader>fy (fn []
+                        (let [path (vim.fn.fnamemodify (vim.fn.expand "%") ":.")]
+                          (vim.fn.setreg "+" path)
+                          (vim.notify (.. "Copied '" path "' to the clipboard!")))))
 
 (map! [n] :<M-g>n :<cmd>cnext<CR>)
 (map! [n] :<M-g>p :<cmd>cprev<CR>)
