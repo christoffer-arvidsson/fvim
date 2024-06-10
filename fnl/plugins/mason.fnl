@@ -18,8 +18,10 @@
                                              :pyright
                                              :fennel_language_server]}))
 
-(local M [{1 :williamboman/mason-lspconfig.nvim :config mason-config}
-          {1 :williamboman/mason.nvim :config mason-lspconfig-config}])
+(local M [{1 :williamboman/mason.nvim
+           :config mason-lspconfig-config
+           :dependencies {1 :williamboman/mason-lspconfig.nvim
+                          :config mason-config}}])
 
 M
 
