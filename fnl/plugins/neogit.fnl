@@ -35,7 +35,7 @@
                              :NeogitCommitPopup--allow-empty
                              :NeogitRevertPopup--no-edit]
           :integrations {:diffview nil :fzf_lua nil :telescope nil}
-          :kind :tab
+          :kind :replace
           :log_view {:kind :tab}
           :mappings {:commit_editor {:<c-c><c-c> :Submit
                                      :<c-c><c-k> :Abort
