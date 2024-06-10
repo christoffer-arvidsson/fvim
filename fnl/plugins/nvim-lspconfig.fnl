@@ -13,7 +13,7 @@
   (vim.api.nvim_create_autocmd :LspAttach
                                {:callback (fn [event]
                                             (vim.keymap.set :n :gd (. (require :telescope.builtin) :lsp_definitions))
-                                            (vim.keymap.set :n :gr (. (require :telescope.builtin) :lsp_references))
+                                            (vim.keymap.set :n :gR (. (require :telescope.builtin) :lsp_references))
                                             (vim.keymap.set :n :gI (. (require :telescope.builtin) :lsp_implementations))
                                             (vim.keymap.set :n :<leader>lD (. (require :telescope.builtin) :lsp_type_definitions))
                                             (vim.keymap.set :n :<leader>ls (. (require :telescope.builtin) :lsp_document_symbols))
