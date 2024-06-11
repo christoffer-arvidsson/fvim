@@ -17,6 +17,8 @@
 (fn M.config []
   (local dired (require :dired))
   (dired.setup {:keybinds { :dired_back "^" :dired_quit "q" }
+                :show_hidden true
+                :show_dot_dirs true
                 :show_icons true 
                 :show_colors true})
 
