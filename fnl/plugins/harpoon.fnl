@@ -2,7 +2,7 @@
 (import-macros {: map!} :hibiscus.vim)
 
 (local M {1 :ThePrimeagen/harpoon
-          :branch :harpoon2
+          :commit :e76cb03
           :lazy false
           :config true
           :dependencies [:nvim-lua/plenary.nvim]})
