@@ -47,7 +47,7 @@
       :warn :gold
     }
     :highlight_groups {}
-    :styles {:bold true :italic true :transparency false}
+    :styles {:bold true :italic false :transparency false}
     :variant :main})
 
   (vim.cmd "colorscheme rose-pine"))
