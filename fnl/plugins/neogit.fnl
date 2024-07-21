@@ -6,7 +6,10 @@
                       :nvim-telescope/telescope.nvim]
        :config true
        :keys [{1 :<leader>gs 2 #(require-and :neogit #($.open))}]
-       :lazy false})
+       :lazy false
+       :branch :nightly
+       })
+
 
 (fn M.config [] 
   (local neogit (require :neogit))
