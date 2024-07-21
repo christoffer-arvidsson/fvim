@@ -7,7 +7,6 @@
        :config true
        :keys [{1 :<leader>gs 2 #(require-and :neogit #($.open))}]
        :lazy false
-       :branch :nightly
        })
 
 
