@@ -3,7 +3,7 @@
 
 ;; Indentation
 (set! expandtab)
-(set! shiftwidth 2)
+(set! shiftwidth 4)
 (set! tabstop 2)
 
 ;; Line numbers
@@ -33,4 +33,7 @@
 (set! timeoutlen 300)
 (set! splitright true)
 (set! inccommand :nosplit)
+
+;; cpp
+(set! cindent)
 
