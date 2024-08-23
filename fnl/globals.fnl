@@ -3,5 +3,6 @@
 (g! mapleader " ")
 (g! maplocalleader " ")
 
-(g! have-nerd-font true)
+(g! have_nerd_font true)
+
 
