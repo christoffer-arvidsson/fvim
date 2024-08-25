@@ -46,19 +46,24 @@
     (when (not root-dir)
       (lua "return nil, \"No .git directory found in any parent directories.\""))
     (local relative-path (filepath:sub (+ (length root-dir) 2)))
-    relative-path))	
+    relative-path))
 
-(map! [n] :<leader>fY (fn [] 
-                        (let [path (vim.fn.expand "%:p")]
-                          (vim.fn.setreg "+" path)
-                          (vim.notify (.. "Copied '" path "' to the clipboard!")))))
+(map! [n] :<leader>fY
+      (fn []
+        (let [path (vim.fn.expand "%:p")]
+          (when path
+            (vim.fn.setreg "+" path)
+            (vim.notify (.. "Copied '" path "' to the clipboard!"))))))
 
-(map! [n] :<leader>fy (fn []
-                        (let [path (get-relative-path-to-git-root)]
-                          (vim.fn.setreg "+" path)
-                          (vim.notify (.. "Copied '" path "' to the clipboard!")))))
+(map! [n] :<leader>fy
+      (fn []
+        (let [path (get-relative-path-to-git-root)]
+          (when path
+            (vim.fn.setreg "+" path)
+            (vim.notify (.. "Copied '" path "' to the clipboard!"))))))
 
 (map! [n] :<M-g>n :<cmd>cnext<CR>)
 (map! [n] :<M-g>p :<cmd>cprev<CR>)
 
 (map! [n] :<leader>qr "<cmd>luafile ~/.config/nvim/init.lua<CR>")
+
