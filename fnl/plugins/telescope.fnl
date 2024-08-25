@@ -12,13 +12,19 @@
 
 (fn M.config []
   (local telescope (require :telescope))
+  (local actions (require :telescope.actions))
   (local fb_actions telescope.extensions.file_browser.actions)
   (telescope.setup {:extensions {:fzf {:fuzzy true
                                        :override_generic_sorter true
                                        :override_file_sorter true
                                        :case_mode :smart_case}
                                  :file_browser {:theme :ivy
-                                                :mappings {:i {:^ fb_actions.goto_parent_dir}}}}
+                                                :mappings {
+                                                :i {
+                                                :^ fb_actions.goto_parent_dir
+                                                :<Tab> actions.select_default
+                                                }
+                                                }}}
                     :defaults {:border true
                                :borderchars [" "
                                              " "
@@ -34,7 +40,7 @@
                                                :width {:padding 0}
                                                :height 0.99}
                                :layout_strategy :vertical
-                               :file_ignore_patterns [:%.git]
+                               :file_ignore_patterns ["%.git"]
                                :vimgrep_arguments [:rg
                                                    :--color=never
                                                    :--no-heading
@@ -61,6 +67,8 @@
         (fn []
           (telescope.extensions.file_browser.file_browser {:cwd (utils.buffer_dir)
                                                            :hidden true
+                                                           :no_ignore true
+                                                           :follow_symlinks true
                                                            :ignore true})))
   (map! [n] :<leader>hh builtin.builtin)
   (map! [n] :<leader>s/
