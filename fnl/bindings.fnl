@@ -27,13 +27,34 @@
 (map! [n] :<leader>bf vim.lsp.buf.format)
 (map! [n] :<leader>bn :<cmd>enew<CR>)
 
+(fn get-relative-path-to-git-root []
+  (let [uv vim.loop
+        filepath (vim.fn.expand "%:p")
+        dir (uv.fs_realpath (vim.fn.expand "%:p:h"))]
+    (when (not dir)
+      (lua "return nil, \"Cannot find directory of current file.\""))
+
+    (fn is-git-dir [path]
+      (let [git-path (uv.fs_realpath (.. path :/.git))]
+        (and git-path (not= (uv.fs_stat git-path) nil))))
+
+    (var root-dir dir)
+    (while root-dir
+      (when (is-git-dir root-dir) (lua :break))
+      (local parent-dir (uv.fs_realpath (.. root-dir "/..")))
+      (if (= parent-dir root-dir) (set root-dir nil) (set root-dir parent-dir)))
+    (when (not root-dir)
+      (lua "return nil, \"No .git directory found in any parent directories.\""))
+    (local relative-path (filepath:sub (+ (length root-dir) 2)))
+    relative-path))	
+
 (map! [n] :<leader>fY (fn [] 
                         (let [path (vim.fn.expand "%:p")]
                           (vim.fn.setreg "+" path)
                           (vim.notify (.. "Copied '" path "' to the clipboard!")))))
 
 (map! [n] :<leader>fy (fn []
-                        (let [path (vim.fn.fnamemodify (vim.fn.expand "%") ":.")]
+                        (let [path (get-relative-path-to-git-root)]
                           (vim.fn.setreg "+" path)
                           (vim.notify (.. "Copied '" path "' to the clipboard!")))))
 
