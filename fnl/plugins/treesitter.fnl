@@ -6,8 +6,8 @@
 (fn M.config []
   (local configs (require :nvim-treesitter.configs))
   (configs.setup {:highlight {:enable true}
-                  :ensure_installed :all
                   :autotag {:enable true}
+                  :auto_install true
                   :context_commentstring {:enable true}
                   :incremental_selection {:enable true}
                   :indent {:enable true}
@@ -37,4 +37,3 @@
                                                                  :desc "Previous argument end"}}}}}))
 
 M
-
