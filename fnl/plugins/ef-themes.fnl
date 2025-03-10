@@ -10,7 +10,10 @@
                       :options {
                       :compile true
                       :compile_path (.. (vim.fn.stdpath :cache) :/ef-themes)
-                      }})
+                      }
+                      :on_colors (fn [colors name] 
+                                   (set colors.yellow colors.yellow_cooler))
+                      })
 
 (vim.cmd "colorscheme ef-theme"))
 
