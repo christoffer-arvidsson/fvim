@@ -36,4 +36,5 @@
 
 ;; cpp
 (set! cindent)
+(vim.opt.iskeyword:remove :_)
 
