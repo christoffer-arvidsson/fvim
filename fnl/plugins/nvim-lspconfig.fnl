@@ -33,6 +33,8 @@
   (lspconfig.clangd.setup {})
   (lspconfig.rust_analyzer.setup {})
   (lspconfig.fennel_language_server.setup {})
-  (lspconfig.pyright.setup {}))
+  (lspconfig.pyright.setup {})
+  (lspconfig.zls.setup {})
+  (lspconfig.gopls.setup {}))
                        
 M
