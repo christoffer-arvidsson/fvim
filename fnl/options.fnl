@@ -6,6 +6,12 @@
 (set! shiftwidth 4)
 (set! tabstop 2)
 
+(vim.api.nvim_create_augroup "go" { :clear true })
+(vim.api.nvim_create_autocmd "FileType" {
+                             :group :go
+                             :pattern :go
+                             :command "setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab" })
+
 ;; Line numbers
 (set! number)
 (set! relativenumber)
