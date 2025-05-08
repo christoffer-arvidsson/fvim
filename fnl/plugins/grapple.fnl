@@ -4,7 +4,7 @@
 
 (fn M.config []
   (local grapple (require :grapple))
-  (grapple.setup {:icons false :scope :git})
+  (grapple.setup {:icons false :scope :git_branch})
   (map! [n] "<leader>'a" (fn [] (grapple.toggle)))
   (map! [n] "<leader>''" (fn [] (grapple.toggle_tags)))
   (map! [n] :<A-n> (fn [] (grapple.select {:index 1})))
