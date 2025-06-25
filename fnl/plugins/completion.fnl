@@ -7,11 +7,16 @@
   (local cmp (require :cmp))
   (cmp.setup.filetype [:sql]
                       {:sources [{:name :vim-dadbod-completion}
-                                 {:name :buffer}]})
+                                 {:name :buffer} ]})
+  (cmp.setup.filetype [:gitcommit]
+                      {:sources [{:name :path}
+                                 {:name :jira_issues} ]})
   (cmp.setup {:completion {:completeopt "menu,menuone,noinsert"}
               :sources [{:name :nvim_lsp}
                         {:name :path}
-                        {:name :nvim_lsp_signature_help}]
+                        {:name :copilot :group_index 2}
+                        {:name :nvim_lsp_signature_help}
+                        {:name :jira_issues}]
               :mapping (cmp.mapping.preset.insert {:<C-Space> (cmp.mapping.complete {})
                                                    :<C-b> (cmp.mapping.scroll_docs (- 4))
                                                    :<C-f> (cmp.mapping.scroll_docs 4)
